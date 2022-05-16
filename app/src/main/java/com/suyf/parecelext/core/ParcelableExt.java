@@ -36,7 +36,6 @@ public interface ParcelableExt extends Parcelable {
             for (Field field : declaredFields) {
                 int mod = field.getModifiers();
                 if (Modifier.isStatic(mod) || Modifier.isTransient(mod)) {
-                    //final的情况可以这样判断：(Modifier.isFinal(mod) && !isKtClass(object))
                     //Log.d("Suyf", "writeToParcel: -Exclude:" + field.getName());
                 } else {
                     field.setAccessible(true);
@@ -55,19 +54,6 @@ public interface ParcelableExt extends Parcelable {
         return 0;
     }
 
-    static boolean isKtClass(Object object) {
-        Annotation[] annotations = object.getClass().getAnnotations();
-        if (annotations == null) {
-            return false;
-        }
-        for (int i = 0; i < annotations.length; i++) {
-            if (annotations[i].toString().contains("kotlin")) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     Creator<Object> CREATOR = new Creator<Object>() {
 
         private Object createInst(Parcel parcelIn) {
@@ -80,7 +66,6 @@ public interface ParcelableExt extends Parcelable {
                 for (Field field : declaredFields) {
                     int mod = field.getModifiers();
                     if (Modifier.isStatic(mod) || Modifier.isTransient(mod)) {
-                        //final的情况可以这样判断：(Modifier.isFinal(mod) && !isKtClass(object))
                         //Log.d("Suyf", "readParcel: -Exclude:" + field.getName());
                     } else {
                         field.setAccessible(true);
