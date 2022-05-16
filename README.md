@@ -1,5 +1,5 @@
 # ParcelableExt
-ParcelableExt is to make Parcelable be use easily as like as use Serializable
+ParcelableExt is to make Parcelable be use easily as like as use Serializable.
 
 usage: just implements ParcelableExt instead of implements Parcelable,and needn't to do any more!
 ~~~
