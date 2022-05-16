@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.suyf.parecelext">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ParecelExt">
+        <activity
+            android:name=".test.SecondActivity"
+            android:label="SecondActivity"></activity>
+        <activity
+            android:name=".test.ThirdTestActivity"
+            android:label="ThirdTestActivity"></activity>
+        <activity
+            android:name=".test.KotlinDataActivity"
+            android:label="KotlinDataActivity"></activity>
+        <activity
+            android:name=".test.ProcessActivity"
+            android:label="ProcessActivity"
+            android:process=":process"></activity>
+
+        <activity
+            android:name=".test.ParcelActivity"
+            android:label="ParcelActivity"></activity>
+        <activity
+            android:name=".test.MainActivity"
+            android:label="MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
