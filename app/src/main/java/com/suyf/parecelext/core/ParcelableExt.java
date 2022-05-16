@@ -88,6 +88,7 @@ public interface ParcelableExt extends Parcelable {
 
         @Override
         public Object[] newArray(int size) {
+            //不支持数组哦因为这个很少用到，需要的话也可以实现的
             return null;
         }
     };
